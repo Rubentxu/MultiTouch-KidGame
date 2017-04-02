@@ -1,14 +1,12 @@
-apply plugin: 'me.tatarka.retrolambda'
-
-archivesBaseName = "SuperMariano" + version
+archivesBaseName = "KidGame" + version
 android {
     signingConfigs {
-        SuperMariano {
+        KidGame {
             try {
-                keyAlias 'smariano'
+                keyAlias 'KidGameMultiTouch'
                 keyPassword KEY_PASSWORD
                 storePassword KEYSTORE_PASSWORD
-                storeFile file('../../smariano-release-key.jks')
+                storeFile file('../../KidGame.jks')
             }
             catch (ex) {
                 throw new InvalidUserDataException("You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle.properties.")
@@ -21,9 +19,9 @@ android {
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
-            java.srcDirs = ['src', '../core/lib/entitas/entitas/src/main/java', '../core/lib/entitas/entitas-libgdx/src/main/java', '../core/src']
-            aidl.srcDirs = ['src', '../core/lib/entitas/entitas/src/main/java', '../core/lib/entitas/entitas-libgdx/src/main/java', '../core/src']
-            renderscript.srcDirs = ['src', '../core/lib/entitas/entitas/src/main/java', '../core/lib/entitas/entitas-libgdx/src/main/java', '../core/src']
+            java.srcDirs = ['src', '../core/src', '../Entitas-Java/entitas/src/main/java', '../Entitas-Java/entitas-libgdx/src/main/java']
+            aidl.srcDirs = ['src', '../core/src', '../Entitas-Java/entitas/src/main/java', '../Entitas-Java/entitas-libgdx/src/main/java']
+            renderscript.srcDirs = ['src', '../core/src', '../Entitas-Java/entitas/src/main/java', '../Entitas-Java/entitas-libgdx/src/main/java']
             res.srcDirs = ['res']
             assets.srcDirs = ['assets']
             jniLibs.srcDirs = ['libs']
@@ -35,11 +33,16 @@ android {
         exclude 'META-INF/robovm/ios/robovm.xml'
     }
     defaultConfig {
-        applicationId "com.indignado.games"
+        applicationId "com.ilargia.games.kidgame"
         minSdkVersion 21
         targetSdkVersion 25
+        multiDexEnabled = true
+        versionCode 1
+        versionName "1.0"
+        signingConfig signingConfigs.KidGame
     }
     dexOptions {
+        incremental true
         javaMaxHeapSize "4g"
     }
     productFlavors {
@@ -47,12 +50,10 @@ android {
             multiDexEnabled true
             dimension 'dextype'
         }
-
         singledex {
             multiDexEnabled true
             dimension 'dextype'
         }
-
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -61,12 +62,12 @@ android {
     buildTypes {
         debug {
             applicationIdSuffix ".debug"
-            signingConfig signingConfigs.SuperMariano
+            signingConfig signingConfigs.KidGame
         }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.SuperMariano
+            signingConfig signingConfigs.KidGame
         }
     }
 
@@ -97,7 +98,6 @@ task copyAndroidNatives() {
         }
     }
 }
-
 task run(type: Exec) {
     def path
     def localProperties = project.file("../local.properties")
@@ -117,9 +117,8 @@ task run(type: Exec) {
     }
 
     def adb = path + "/platform-tools/adb"
-    commandLine "$adb", 'shell', 'am', 'start', '-n', 'com.indignado.games/com.indignado.games.AndroidLauncher'
+    commandLine "$adb", 'shell', 'am', 'start', '-n', 'com.ilargia.games.kidgame/com.ilargia.games.kidgame.AndroidLauncher'
 }
-
 // sets up the Android Eclipse project, using the old Ant based build.
 eclipse {
     // need to specify Java source sets explicitly, SpringSource Gradle Eclipse plugin
@@ -141,7 +140,7 @@ eclipse {
     }
 
     project {
-        name = "SuperMariano-android" + version
+        name = "KidGame-android" + version
         natures 'com.android.ide.eclipse.adt.AndroidNature'
         buildCommands.clear();
         buildCommand "com.android.ide.eclipse.adt.ResourceManagerBuilder"
@@ -150,7 +149,6 @@ eclipse {
         buildCommand "com.android.ide.eclipse.adt.ApkBuilder"
     }
 }
-
 // sets up the Android Idea project, using the old Ant based build.
 idea {
     module {
@@ -175,4 +173,11 @@ idea {
 }
 retrolambda {
     javaVersion JavaVersion.VERSION_1_7
+    jvmArgs '-noverify'
+    defaultMethods true
+    incremental true
+
+}
+
+dependencies {
 }
