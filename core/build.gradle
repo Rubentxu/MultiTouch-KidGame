@@ -2,7 +2,7 @@ apply plugin: "java"
 targetCompatibility = 1.8
 sourceCompatibility = 1.8
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
-sourceSets.main.java.srcDirs = ["src/"]
+sourceSets.main.java.srcDirs = ["src/",'../Entitas-Java/entitas/src/main/java', '../Entitas-Java/entitas-libgdx/src/main/java']
 eclipse.project {
     name = appName + "-core"
 }

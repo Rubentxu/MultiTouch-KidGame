@@ -1,1 +1,1 @@
-include 'desktop', 'android', 'ios', 'core', 'Entitas-Java:entitas', 'Entitas-Java:entitas-libgdx'
+include 'desktop', /*'android', 'ios', */'core'

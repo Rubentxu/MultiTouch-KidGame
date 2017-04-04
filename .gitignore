@@ -73,3 +73,5 @@ local.properties
 .DS_Store
 Thumbs.db
 gen/
+
+gradle/wrapper/gradle-wrapper.properties
