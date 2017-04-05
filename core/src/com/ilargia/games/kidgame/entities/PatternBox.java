@@ -38,7 +38,7 @@ public class PatternBox implements EntityFactory<Entitas, GameEntity> {
                         false, false, 0.5f, 0, Color.WHITE);
 
         entitas.sensor.createEntity()
-                .addNearSensor("", 1.6f, 1.6f)
+                .addNearSensor("Box"+entity.getCreationIndex(), 1.6f, 1.6f)
                 .addLink(entity.getCreationIndex(), "PatternSensor");
 
         return entity;

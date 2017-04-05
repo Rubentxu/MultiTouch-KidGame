@@ -17,14 +17,14 @@ public class SceneOne implements SceneFactory<Engine, Entitas> {
     @Override
     public void createScene(Engine engine, Entitas entitas) {
         AssetsManagerGDX assetsManager = engine.getManager(AssetsManagerGDX.class);
-        assetsManager.loadTexture("imagenes/fondos/fondo.jpg");
-//        assetsManager.loadTexture("imagenes/fondos/nubes.png");
-//        assetsManager.loadTexture("imagenes/fondos/arboles.png");
+//        assetsManager.loadTexture("imagenes/fondos/fondo.jpg");
+        assetsManager.loadTexture("imagenes/fondos/nubes.png");
+        assetsManager.loadTexture("imagenes/fondos/arboles.png");
         assetsManager.finishLoading();
 
 
         entitas.scene.createEntity()
-                .addParallaxLayer(new TextureRegion(assetsManager.getTexture("imagenes/fondos/fondo.jpg"))
+                .addParallaxLayer(new TextureRegion(assetsManager.getTexture("imagenes/fondos/arboles.png"))
                         , new Vector2(0.7f,0f),new Vector2(0, 1),new Vector2(0, 0));
 
 
@@ -36,13 +36,13 @@ public class SceneOne implements SceneFactory<Engine, Entitas> {
         ground.getRigidBody().body.setTransform(10, 1, 0);
 
         GameEntity box1 = sceneManager.createEntity("Box");
-        box1.addTags("Box1").setInteractive(true).getRigidBody().body.setTransform(20,5,0);
+        box1.addTags("Box4").setInteractive(true).getRigidBody().body.setTransform(20,5,0);
 
         GameEntity box2 = sceneManager.createEntity("Box");
-        box2.addTags("Box2").setInteractive(true).getRigidBody().body.setTransform(10,5,0);
+        box2.addTags("Box5").setInteractive(true).getRigidBody().body.setTransform(10,5,0);
 
         GameEntity box3 = sceneManager.createEntity("Box");
-        box3.addTags("Box3").setInteractive(true).getRigidBody().body.setTransform(15,5,0);
+        box3.addTags("Box6").setInteractive(true).getRigidBody().body.setTransform(15,5,0);
 
         entitas.actuator.setDragActuator(ground.getCreationIndex(), false, 1000);
 

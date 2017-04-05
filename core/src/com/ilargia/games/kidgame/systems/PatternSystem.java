@@ -23,12 +23,14 @@ public class PatternSystem implements IInitializeSystem, IExecuteSystem {
 
     private final EngineGDX engine;
     private final Group<SensorEntity> group;
+    private final Entitas entitas;
     private SceneManagerGDX sceneManager;
     private World physics;
 
 
     public PatternSystem(Entitas entitas, EngineGDX engine) {
         this.engine = engine;
+        this.entitas = entitas;
         this.group = entitas.sensor.getGroup(SensorMatcher.NearSensor());
 
     }
@@ -56,11 +58,12 @@ public class PatternSystem implements IInitializeSystem, IExecuteSystem {
                     float distSqr = position1.dst2(position2);
                     float minRange = 10f;
                     if (distSqr < (minRange * minRange)) {
-                        //physics.destroyBody(bodyInSensor);
                         GameEntity fixedBoxBox = sceneManager.createEntity("FixedBox");
-                        fixedBoxBox.setInteractive(true).getRigidBody().body.setTransform(bodyInSensor.getPosition(),0);
-                        bodyInSensor = null;
+                        fixedBoxBox.setInteractive(true).getRigidBody().body.setTransform(patternBody.getPosition(),0);
                         entityInSensor.setDestroy(true);
+                        patterEntity.setDestroy(true);
+                        sensorEntity.getNearSensor().distanceContactList.clear();
+                        entitas.sensor.destroyEntity(sensorEntity);
                     }
                 }
             }
