@@ -61,7 +61,6 @@ public class KidGameSceneState extends GameStateGDX {
                 .add(new RadarSensorSystem(entitas, engine))
                 .add(new RaySensorSystem(entitas, engine.getManager(PhysicsManagerGDX.class).getPhysics()))
                 .add(new AddInputControllerSystem(entitas, engine))
-                .add(new InputControllerSystem(engine))
                 .add(new SceneSystem(entitas, engine))
                 .add(new RigidBodySystem(entitas))
                 .add(new AnimationSystem(entitas))
@@ -73,8 +72,8 @@ public class KidGameSceneState extends GameStateGDX {
                 .add(new LigthRendererSystem(entitas, engine))
                 .add(new BackgroundRenderSystem(entitas, engine))
                 .add(new TextureRendererSystem(entitas, engine))
-                .add(new DebugRendererSystem(entitas, engine.getManager(PhysicsManagerGDX.class).getPhysics(),
-                        engine.getManager(SceneManagerGDX.class).getBatch()))
+//                .add(new DebugRendererSystem(entitas, engine.getManager(PhysicsManagerGDX.class).getPhysics(),
+//                        engine.getManager(SceneManagerGDX.class).getBatch()))
                 .add(new DestroySystem(entitas, engine));
 
         sceneManager.createScene("Pruebas");

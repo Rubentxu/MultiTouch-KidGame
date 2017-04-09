@@ -11,6 +11,7 @@ task run(dependsOn: classes, type: JavaExec) {
     ignoreExitValue = true
 }
 task dist(type: Jar) {
+    archiveName "KidGame" + version+ ".jar"
     from files(sourceSets.main.output.classesDir)
     from files(sourceSets.main.output.resourcesDir)
     from { configurations.compile.collect { zipTree(it) } }

@@ -23,11 +23,11 @@ public class Ground implements EntityFactory<Entitas, GameEntity> {
     public GameEntity create(Engine engine, Entitas entitas) {
         BodyBuilder bodyBuilder = engine.getManager(PhysicsManagerGDX.class).getBodyBuilder();
 
-        return entitas.game.createEntity().addTags("Ground")
+        return entitas.game.createEntity()
                 .setInteractive(true)
                 .addRigidBody(bodyBuilder.fixture(bodyBuilder.fixtureDefBuilder
-                        .boxShape(150, 0.5f)
-                        .friction(0.5f))
+                        .boxShape(50, 0.6f)
+                        .friction(0.7f))
                         .build());
 
 

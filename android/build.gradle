@@ -42,7 +42,7 @@ android {
         signingConfig signingConfigs.KidGame
     }
     dexOptions {
-        incremental true
+
         javaMaxHeapSize "4g"
     }
     productFlavors {
@@ -175,7 +175,6 @@ retrolambda {
     javaVersion JavaVersion.VERSION_1_7
     jvmArgs '-noverify'
     defaultMethods true
-    incremental true
 
 }
 

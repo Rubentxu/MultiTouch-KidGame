@@ -24,8 +24,8 @@ public class LimitsSceneSystem implements IInitializeSystem, IExecuteSystem {
     private float limitRigth;
     private float limitLeft;
     private float limitUp;
+    private float limitDown;
     private World physics;
-
 
     public LimitsSceneSystem(Entitas entitas, EngineGDX engine) {
         this.engine = engine;
@@ -41,6 +41,7 @@ public class LimitsSceneSystem implements IInitializeSystem, IExecuteSystem {
         limitRigth = camera.position.x + camera.viewportWidth / 2;
         limitLeft = camera.position.x - camera.viewportWidth / 2;
         limitUp = camera.position.y + camera.viewportHeight / 2;
+        limitDown = camera.position.y +1 - camera.viewportHeight / 2;
 
     }
 
@@ -48,45 +49,50 @@ public class LimitsSceneSystem implements IInitializeSystem, IExecuteSystem {
     public void execute(float deltaTime) {
 
         for (GameEntity gameEntity : group.getEntities()) {
-            Body body = gameEntity.getRigidBody().body;
-            Vector2 position = body.getPosition();
-            Vector2 velocity = body.getLinearVelocity();
-            if (position.x - 0.8f > limitRigth) {
-                position.x = limitLeft + 1;
-                Transform tranform = body.getTransform();
-                tranform.setPosition(position);
-                body.setTransform(tranform.getPosition(), tranform.getRotation());
-                destroyJoint(body);
+            if(gameEntity.isDraggable()) {
+                Body body = gameEntity.getRigidBody().body;
+                Vector2 position = body.getPosition();
+                Vector2 velocity = body.getLinearVelocity();
+                if (position.x - 0.8f > limitRigth) {
+                    position.x = limitLeft + 1;
+                    Transform tranform = body.getTransform();
+                    tranform.setPosition(position);
+                    body.setTransform(tranform.getPosition(), tranform.getRotation());
+                    destroyJoint(body);
 
+                }
+
+                if (position.x + 0.8f < limitLeft) {
+                    position.x = limitRigth - 1;
+                    Transform tranform = body.getTransform();
+                    tranform.setPosition(position);
+                    body.setTransform(tranform.getPosition(), tranform.getRotation());
+                    destroyJoint(body);
+                }
+
+                if (position.y - 0.8f > limitUp) {
+                    velocity.y = -Math.abs(velocity.y);
+                    destroyJoint(body);
+                }
+                if (position.y < limitDown) {
+                    position.y = limitDown + 1;
+                    Transform tranform = body.getTransform();
+                    tranform.setPosition(position);
+                    body.setTransform(tranform.getPosition(), tranform.getRotation());
+                    destroyJoint(body);
+                }
+                body.setLinearVelocity(velocity);
             }
-
-            if (position.x + 0.8f < limitLeft) {
-                position.x = limitRigth - 1;
-                Transform tranform = body.getTransform();
-                tranform.setPosition(position);
-                body.setTransform(tranform.getPosition(), tranform.getRotation());
-                destroyJoint(body);
-            }
-
-            if (position.y - 0.8f > limitUp) {
-                velocity.y = -Math.abs(velocity.y);
-                destroyJoint(body);
-            }
-
-            velocity.x -= 0.1f;
-            velocity.y -= 0.1f;
-            body.setLinearVelocity(velocity);
-
         }
 
     }
 
     private void destroyJoint(Body body) {
         for (int i = 0; i < 5; i++) {
-            if (inputManager.isTouchDown(i) && inputManager.getTouchState(i).joint != null
-                    && inputManager.getTouchState(i).joint.getBodyB() == body) {
-                physics.destroyJoint(inputManager.getTouchState(i).joint);
-                inputManager.getTouchState(i).joint = null;
+            if (inputManager.isTouchDown(i) && inputManager.joints[i] != null
+                    && inputManager.joints[i].getBodyB() == body) {
+                physics.destroyJoint(inputManager.joints[i]);
+                inputManager.joints[i] = null;
             }
         }
     }

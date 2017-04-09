@@ -33,9 +33,7 @@ public class PatternBox implements EntityFactory<Entitas, GameEntity> {
         GameEntity entity = entitas.game.createEntity()
                 .addRigidBody(bodyBuilder
                         .type(BodyDef.BodyType.StaticBody)
-                        .build())
-                .addTextureView(new TextureRegion(assetsManager.getTexture(box2)), new Bounds(width, height),
-                        false, false, 0.5f, 0, Color.WHITE);
+                        .build());
 
         entitas.sensor.createEntity()
                 .addNearSensor("Box"+entity.getCreationIndex(), 1.6f, 1.6f)

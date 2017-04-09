@@ -39,8 +39,8 @@ public class Box implements EntityFactory<Entitas, GameEntity> {
                         .density(1f))
                         .type(BodyDef.BodyType.DynamicBody)
                         .build())
-                .addTextureView(new TextureRegion(assetsManager.getTexture(box2)), new Bounds(width, height),
-                        false, false, 1, 0, Color.WHITE);
+                .setDraggable(true);
+
 
         return entity;
 
