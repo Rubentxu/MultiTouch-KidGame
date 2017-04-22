@@ -3,7 +3,9 @@ sourceCompatibility = 1.8
 sourceSets.main.java.srcDirs = ["src/"]
 project.ext.mainClassName = "com.ilargia.games.kidgame.desktop.DesktopLauncher"
 project.ext.assetsDir = new File("../android/assets");
-task run(dependsOn: classes, type: JavaExec) {
+
+task execute( type: JavaExec) {
+    dependsOn 'dist'
     main = project.mainClassName
     classpath = sourceSets.main.runtimeClasspath
     standardInput = System.in
