@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.ilargia.games.egdx.api.managers.LogManager;
 import com.ilargia.games.egdx.impl.EventBusGDX;
 import com.ilargia.games.egdx.impl.managers.*;
@@ -27,7 +28,7 @@ public class KidGame implements ApplicationListener {
 		AssetManager assetsManager = new AssetManager();
 		engine.addManager(new AssetsManagerGDX(assetsManager, preferencesManager));
 		engine.addManager(new PhysicsManagerGDX(new Vector2(0,-9.8f)));
-		engine.addManager(new GUIManagerGDX(new BitmapFont(), null, engine));
+		engine.addManager(new GUIManagerGDX(new ScreenViewport(), new BitmapFont(), null, engine));
 		engine.addManager(new SceneManagerGDX(engine, entitas));
 		engine.addManager(new LogManagerGDX(preferencesManager));
 		engine.addManager(new InputManagerGDX(entitas, engine));
