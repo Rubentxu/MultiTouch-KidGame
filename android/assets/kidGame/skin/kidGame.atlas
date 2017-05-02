@@ -1,0 +1,375 @@
+
+kidGame.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+button-nine
+  rotate: false
+  xy: 1, 831
+  size: 429, 192
+  split: 80, 60, 56, 83
+  orig: 429, 192
+  offset: 0, 0
+  index: -1
+buttonClick-nine
+  rotate: false
+  xy: 432, 833
+  size: 427, 190
+  split: 82, 54, 59, 74
+  orig: 427, 190
+  offset: 0, 0
+  index: -1
+buttonOver-nine
+  rotate: false
+  xy: 1, 637
+  size: 428, 192
+  split: 81, 56, 60, 81
+  pad: 79, 58, 58, 84
+  orig: 428, 192
+  offset: 0, 0
+  index: -1
+bg
+  rotate: false
+  xy: 1, 85
+  size: 352, 191
+  split: 148, 172, 93, 93
+  pad: 0, 0, 0, 0
+  orig: 352, 191
+  offset: 0, 0
+  index: -1
+button
+  rotate: false
+  xy: 861, 834
+  size: 111, 64
+  split: 66, 29, 0, 0
+  pad: 64, 27, 7, 12
+  orig: 111, 64
+  offset: 0, 0
+  index: -1
+button-close
+  rotate: false
+  xy: 1002, 1004
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+button-close-over
+  rotate: false
+  xy: 974, 879
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+button-over
+  rotate: false
+  xy: 254, 19
+  size: 111, 64
+  split: 66, 29, 0, 0
+  pad: 64, 27, 7, 12
+  orig: 111, 64
+  offset: 0, 0
+  index: -1
+button-pressed
+  rotate: false
+  xy: 705, 265
+  size: 111, 64
+  split: 66, 29, 0, 0
+  pad: 64, 27, 7, 12
+  orig: 111, 64
+  offset: 0, 0
+  index: -1
+button-pressed-over
+  rotate: false
+  xy: 818, 258
+  size: 111, 64
+  split: 66, 29, 0, 0
+  pad: 64, 27, 7, 12
+  orig: 111, 64
+  offset: 0, 0
+  index: -1
+button-small
+  rotate: false
+  xy: 610, 256
+  size: 47, 32
+  split: 15, 15, 0, 0
+  pad: 15, 15, 4, 4
+  orig: 47, 32
+  offset: 0, 0
+  index: -1
+button-small-pressed
+  rotate: false
+  xy: 931, 290
+  size: 47, 32
+  split: 15, 15, 0, 0
+  pad: 15, 15, 4, 4
+  orig: 47, 32
+  offset: 0, 0
+  index: -1
+check-heart
+  rotate: false
+  xy: 978, 418
+  size: 37, 36
+  orig: 37, 36
+  offset: 0, 0
+  index: -1
+check-heart-over
+  rotate: false
+  xy: 978, 380
+  size: 37, 36
+  orig: 37, 36
+  offset: 0, 0
+  index: -1
+check-heart-pressed
+  rotate: false
+  xy: 978, 342
+  size: 37, 36
+  orig: 37, 36
+  offset: 0, 0
+  index: -1
+check-heart-pressed-over
+  rotate: false
+  xy: 659, 252
+  size: 37, 36
+  orig: 37, 36
+  offset: 0, 0
+  index: -1
+check-star
+  rotate: false
+  xy: 367, 43
+  size: 47, 42
+  orig: 47, 42
+  offset: 0, 0
+  index: -1
+check-star-over
+  rotate: false
+  xy: 931, 246
+  size: 47, 42
+  orig: 47, 42
+  offset: 0, 0
+  index: -1
+check-star-pressed
+  rotate: false
+  xy: 873, 658
+  size: 47, 42
+  orig: 47, 42
+  offset: 0, 0
+  index: -1
+check-star-pressed-over
+  rotate: false
+  xy: 922, 666
+  size: 47, 42
+  orig: 47, 42
+  offset: 0, 0
+  index: -1
+clear
+  rotate: false
+  xy: 1022, 1001
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+cloud-1
+  rotate: false
+  xy: 432, 647
+  size: 352, 184
+  orig: 352, 184
+  offset: 0, 0
+  index: -1
+cloud-2
+  rotate: false
+  xy: 705, 456
+  size: 318, 189
+  orig: 318, 189
+  offset: 0, 0
+  index: -1
+font-button-export
+  rotate: false
+  xy: 359, 290
+  size: 344, 345
+  orig: 344, 345
+  offset: 0, 0
+  index: -1
+font-export
+  rotate: false
+  xy: 786, 702
+  size: 127, 129
+  orig: 127, 129
+  offset: 0, 0
+  index: -1
+font-title-export
+  rotate: false
+  xy: 1, 278
+  size: 356, 357
+  orig: 356, 357
+  offset: 0, 0
+  index: -1
+hover
+  rotate: false
+  xy: 1, 28
+  size: 132, 55
+  orig: 132, 55
+  offset: 0, 0
+  index: -1
+list
+  rotate: false
+  xy: 484, 202
+  size: 50, 50
+  split: 9, 9, 9, 9
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+progress-bar-before
+  rotate: false
+  xy: 1022, 928
+  size: 1, 71
+  orig: 1, 71
+  offset: 0, 0
+  index: -1
+progress-bar-cloud
+  rotate: false
+  xy: 861, 900
+  size: 139, 123
+  orig: 139, 123
+  offset: 0, 0
+  index: -1
+progress-bar-cloud-back
+  rotate: false
+  xy: 705, 331
+  size: 139, 123
+  orig: 139, 123
+  offset: 0, 0
+  index: -1
+progress-bar-heart
+  rotate: false
+  xy: 786, 666
+  size: 85, 34
+  orig: 85, 34
+  offset: 0, 0
+  index: -1
+progress-bar-heart-back
+  rotate: false
+  xy: 359, 254
+  size: 85, 34
+  orig: 85, 34
+  offset: 0, 0
+  index: -1
+progress-bar-knob
+  rotate: false
+  xy: 135, 11
+  size: 117, 72
+  orig: 117, 72
+  offset: 0, 0
+  index: -1
+progress-bar-star
+  rotate: false
+  xy: 446, 254
+  size: 80, 34
+  orig: 80, 34
+  offset: 0, 0
+  index: -1
+progress-bar-star-back
+  rotate: false
+  xy: 528, 254
+  size: 80, 34
+  orig: 80, 34
+  offset: 0, 0
+  index: -1
+scrollbar-horizontal
+  rotate: false
+  xy: 1, 8
+  size: 50, 18
+  split: 11, 11, 0, 0
+  pad: 0, 0, 0, 0
+  orig: 50, 18
+  offset: 0, 0
+  index: -1
+scrollbar-vertical
+  rotate: false
+  xy: 1002, 952
+  size: 18, 50
+  split: 0, 0, 10, 10
+  pad: 0, 0, 0, 0
+  orig: 18, 50
+  offset: 0, 0
+  index: -1
+select-box
+  rotate: false
+  xy: 915, 772
+  size: 86, 60
+  split: 28, 44, 0, 0
+  pad: 28, 46, 7, 6
+  orig: 86, 60
+  offset: 0, 0
+  index: -1
+select-box-pressed
+  rotate: false
+  xy: 915, 710
+  size: 86, 60
+  split: 28, 44, 0, 0
+  pad: 28, 46, 7, 6
+  orig: 86, 60
+  offset: 0, 0
+  index: -1
+splitpane-horizontal
+  rotate: false
+  xy: 254, 16
+  size: 4, 1
+  orig: 4, 1
+  offset: 0, 0
+  index: -1
+splitpane-vertical
+  rotate: false
+  xy: 818, 325
+  size: 1, 4
+  orig: 1, 4
+  offset: 0, 0
+  index: -1
+textfield
+  rotate: false
+  xy: 536, 204
+  size: 48, 48
+  split: 6, 6, 6, 6
+  pad: 8, 8, 8, 8
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+title-box
+  rotate: false
+  xy: 430, 200
+  size: 52, 52
+  split: 18, 18, 18, 18
+  pad: 18, 18, 4, 4
+  orig: 52, 52
+  offset: 0, 0
+  index: -1
+touchpad
+  rotate: false
+  xy: 846, 324
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+touchpad-knob
+  rotate: false
+  xy: 355, 185
+  size: 73, 67
+  orig: 73, 67
+  offset: 0, 0
+  index: -1
+white
+  rotate: false
+  xy: 355, 275
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+window
+  rotate: false
+  xy: 355, 87
+  size: 72, 96
+  split: 25, 25, 40, 23
+  pad: 5, 5, 41, 3
+  orig: 72, 96
+  offset: 0, 0
+  index: -1

@@ -9,9 +9,13 @@ import com.ilargia.games.egdx.logicbricks.index.Indexed;
 import com.ilargia.games.egdx.logicbricks.system.actuator.ActuatorSystem;
 import com.ilargia.games.egdx.logicbricks.system.actuator.CreateRadialGravityActuatorSystem;
 import com.ilargia.games.egdx.logicbricks.system.actuator.RadialGravityActuatorSystem;
-import com.ilargia.games.egdx.logicbricks.system.game.*;
+import com.ilargia.games.egdx.logicbricks.system.game.AddInputControllerSystem;
+import com.ilargia.games.egdx.logicbricks.system.game.AnimationSystem;
+import com.ilargia.games.egdx.logicbricks.system.game.DestroySystem;
+import com.ilargia.games.egdx.logicbricks.system.game.RigidBodySystem;
+import com.ilargia.games.egdx.logicbricks.system.monitor.MonitorSystem;
 import com.ilargia.games.egdx.logicbricks.system.render.BackgroundRenderSystem;
-import com.ilargia.games.egdx.logicbricks.system.render.DebugRendererSystem;
+import com.ilargia.games.egdx.logicbricks.system.render.GuiRendererSystem;
 import com.ilargia.games.egdx.logicbricks.system.render.LigthRendererSystem;
 import com.ilargia.games.egdx.logicbricks.system.render.TextureRendererSystem;
 import com.ilargia.games.egdx.logicbricks.system.scene.SceneSystem;
@@ -72,9 +76,11 @@ public class KidGameSceneState extends GameStateGDX {
                 .add(new LigthRendererSystem(entitas, engine))
                 .add(new BackgroundRenderSystem(entitas, engine))
                 .add(new TextureRendererSystem(entitas, engine))
+                .add(new GuiRendererSystem(engine))
 //                .add(new DebugRendererSystem(entitas, engine.getManager(PhysicsManagerGDX.class).getPhysics(),
 //                        engine.getManager(SceneManagerGDX.class).getBatch()))
-                .add(new DestroySystem(entitas, engine));
+                .add(new DestroySystem(entitas, engine))
+                .add(new MonitorSystem(entitas, engine));
 
         sceneManager.createScene("Pruebas");
     }
